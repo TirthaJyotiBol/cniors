@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +34,7 @@
                                                         <!-- SignUp-Form -->
 
 <i id="registration-icon" class="fas fa-user"></i>
-<form action="" method="post" class="signupform">
+<form  method="POST" class="signupform">
 <div class="flexboxonesignup">
 <p id="image-in-registration-form" > <img id="imageinregistrationform" src="https://cdn.pixabay.com/photo/2014/05/02/21/50/laptop-336378_960_720.jpg" alt="image"> </p>
 </div>
@@ -39,16 +42,56 @@
 
 <div class="flexboxtwosignup">
 <h2 id="signupheading" >SIGN UP</h2> <br>
-Name <input id="name" type="text" name="name" class="registrationdetails" placeholder="Enter your Name" ><br>
-Branch <input id="branch" type="text" name="branch" class="registrationdetails" placeholder="Enter your Branch" ><br>
-Semester <input id="semester" type="text" name="semester" class="registrationdetails" placeholder="Enter your Semester" ><br>
-PhoneNumber <input id="number" type="text" name="PhoneNumber" class="registrationdetails" placeholder="Enter your Number" ><br>
-Email <input type="mail" id="mail" name="email" class="registrationdetails" placeholder="Enter your Mail" ><br>
-Password <input type="password" id="password" name="password" class="registrationdetails" placeholder="Create your Password" ><br>
-Confirm Password <input id="confirmpassword" type="password" name="confirm-password" class="registrationdetails" placeholder="Confirm Password" ><br>
-<input type="submit" id="register" class="registrationdetails" placeholder="REGISTER" name="submit">
+Name <input id="name" type="text" name="name" class="registrationdetails" placeholder="Enter your Name" required ><br>
+Branch <input id="branch" type="text" name="branch" class="registrationdetails" placeholder="Enter your Branch" required ><br>
+Semester <input id="semester" type="text" name="semester" class="registrationdetails" placeholder="Enter your Semester" required ><br>
+PhoneNumber <input id="number" type="text" name="PhoneNumber" class="registrationdetails" placeholder="Enter your Number" required ><br>
+Email <input type="mail" id="mail" name="email" class="registrationdetails" placeholder="Enter your Mail" required ><br>
+Password <input type="password" id="password" name="password" class="registrationdetails" placeholder="Create your Password" required ><br>
+Confirm Password <input id="confirmpassword" type="password" name="confirmpassword" class="registrationdetails" placeholder="Confirm Password" required ><br>
+<button name="submit" id="register" class="registrationdetails"> REGISTER</button> <br> 
 </div>
 </form>
+
+
+<?php  include 'connection.php'; 
+if(isset($_POST['submit'])){
+    $name=$_POST['name'];
+    $branch=$_POST['branch'];
+    $semester=$_POST['semester'];
+    $phonenumber=$_POST['PhoneNumber'];
+    $email=$_POST['email'];
+    $password=$_POST['password'];
+    $confirmpassword=$_POST['confirmpassword'];
+    
+    $encryptedpassword = password_hash($password,PASSWORD_BCRYPT);
+    $encryptedconfirmpassword = password_hash($confirmpassword,PASSWORD_BCRYPT);
+    $selectquery ="SELECT * FROM `registration` WHERE email='$email' ";
+    $result = mysqli_query($conn,$selectquery);
+    $mailcount = mysqli_num_rows($result);
+    if($mailcount>0){
+      ?>  <script>alert("mail id already exists");</script>  <?php
+    }
+    else{
+        if($password === $confirmpassword){
+        $insertquery="INSERT INTO `registration`(`name`, `branch`, `semester`, `phone`, `email`, `password`, `confirmpassword`)
+        VALUES ('$name','$branch','$semester','$phonenumber','$email','$encryptedpassword','$encryptedconfirmpassword')";
+        $insertresult =mysqli_query($conn,$insertquery);
+        ?> <script>alert("Registration Successful");</script>  <?php
+    }
+    else{
+        ?>
+        <script>alert("password is not matching");</script>  <?php
+    }
+}
+}
+
+
+
+?>
+
+
+
 
                                                         
                                                         <!-- footer -->
@@ -77,3 +120,4 @@ Confirm Password <input id="confirmpassword" type="password" name="confirm-passw
     </div>
 </body>
 </html>
+
