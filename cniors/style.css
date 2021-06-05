@@ -1,8 +1,23 @@
+
 *{
   margin: 0%;
   padding: 0%;
   font-family: 'Source Sans Pro', sans-serif;
 }
+
+@media(max-width:480px){
+    *{
+        margin: 0%;
+        padding: 0%;
+        font-family: 'Source Sans Pro', sans-serif;
+
+    }
+}
+
+
+
+
+
                             /* all navigationbar-color */
 #aa{
     color: rgb(150, 148, 148);
@@ -40,6 +55,82 @@ html{
     display: flex;
     padding: 0.5cm;     
 }
+
+
+@media(max-width:480px){
+    
+body {
+    background-color: #0000000a;
+}
+    .navigation-bar{
+        flex-direction: column;
+        width: 90%;
+        background-color: rgba(0, 0, 0, 0.726);
+        position: fixed;
+        margin-bottom: 1cm;
+    }
+    #awesomelogo{display: none;}
+    .lineinsidenavigation{ display: none; }
+    .navitems{padding-left: 3.9cm; padding-bottom: 5px;}
+    #home{padding-left: 2.4cm;} 
+    .secondpart{
+         margin-left: 0cm;
+         width: 0.1cm;
+         padding-left: 0px;
+         text-align:left;
+    }
+    /* #birdimage{display: block;margin-top: 5.2cm; } */
+    #imageafterquote{ margin-top: 5.2cm;  }
+    .thirdpart{ flex-direction: column-reverse; margin-bottom: 1cm; margin: left -10px; }
+    #motivation{font-size: 1cm; margin-left: 1.8cm; width: 30%; }
+    #transitionimage{margin-left: 18cm; width: 9cm;}
+    .flexboxtwo{width:100%;}
+    .whatweprovide{width:2cm;}
+    .providings{flex-direction: column;}
+    #assignments{ margin-left: 2cm;}
+    #consultancy{ margin-left: 2cm;}
+    #roadmaps{ margin-left: 2cm;}
+    .footer {
+        padding-top: 0.8cm;
+        color: white;
+        font-family: 'Karantina', cursive;
+        width: 99%;
+        height: 10cm;
+        margin-top: 2cm;
+        background-color: rgb(5, 15, 59);
+        display: flex;
+        justify-content: space-between;
+    }
+    .about{display: none;}
+    .signup{margin-left: 0.1px; padding-top: 1px;}
+    #quote {
+        margin-top: 5.27cm;
+        margin-left: -1cm;
+        width: 3cm;
+        background-color: rgb(20, 82, 197);
+        margin-left: -19px;
+        color: rgb(0, 0, 0);
+        font-size: 0.3cm;
+        font-family: 'Merriweather', serif;
+        padding-left: 1cm;
+        border-bottom: black solid;
+
+        /* login-page */  
+    }  
+
+    #loginpagesymbol {
+        size: 2cm;
+        font-size: 1cm;
+        margin-left: 4cm;
+        margin-top: 5.4cm;
+        color: rgb(0 0 0);
+    }
+}
+
+
+
+
+
 #fa{
     size: 1cm;
     background: rgba(44, 43, 43, 0.959);
@@ -93,9 +184,11 @@ html{
 .secondpart{
     margin-left: 3cm;
     display: flex;
-    margin-bottom: 2cm;
-    
+    margin-bottom: 2cm;    
 }
+
+
+
 #quote{
     width: 5cm;
     background-color: rgb(20, 82, 197);
@@ -364,7 +457,41 @@ color: hotpink;
 
 
                                                     /* loginpage */
-#loginpagesymbol{
+
+#gootoprofile{
+    text-decoration: none;
+    color: rgb(255, 251, 16);
+    font-size: 0.5cm;
+    padding-left: 0.5cm;
+    margin-top: 0.9cm; 
+    padding-top: 1cm; 
+}
+#goto{
+    width: 4cm;
+    height: 0.7cm;
+    background-color: black;
+    margin-left: 3cm;  
+}
+#go{
+    margin-top: 8px;
+    background-color: black;
+    margin-left: 3.5cm;
+    width: 3cm;
+}
+#goto:hover{
+    background-color: rgba(0, 0, 0, 0.418);
+    cursor: pointer;
+}
+
+#gotologout{ text-decoration: none;
+    color: rgb(255, 251, 16);
+    font-size: 0.5cm;
+    padding-left: 0.5cm;
+    margin-top: 0.1cm; 
+    padding-top: 0.1cm;
+    }
+
+     #loginpagesymbol{
     size: 4cm;
     font-size: 3cm;
     margin-left: 16.5cm;
@@ -1311,3 +1438,78 @@ ul span{
     border-bottom: solid 1px black;
 
 }
+
+
+
+                                                    /* CONSULTS */
+
+/* 
+responsive for consults */
+
+@media(max-width : 731px){
+
+    .consultbody{background-color: rgba(128, 128, 128, 0.123);}
+    .navigation-bar{position: fixed;}
+    .sliders-consult img{ margin-top: 8.2cm;  }
+    .carousel-item { margin-bottom: 2cm;}
+    #youcan{ font-size: 0.5cm; margin-left: 28px; }
+    #cnwrite{font-size: 0.4cm; margin-left: -0.4px;}
+    .whatsappbutton{display: none;}
+    .none{display: block;}
+}
+
+
+   .sliders-consult img{
+    height: 13cm;
+    width: 100%;
+    opacity: 89%;
+}
+
+.whatsapp h1{
+    margin-left: 2.5cm;
+    font-family: 'Merriweather', serif;
+    font-size: 1.8cm;
+}
+.none{display: none;}
+.whatsapp img {
+    width: 5cm;
+    height: 5cm;
+    border-radius: 50%;
+    border: solid rgb(184, 182, 182) 1px;
+    opacity: 91%;
+}
+.whatsapp span {
+    display: flex;
+    width: 90%;
+    margin-left: 1cm;
+    margin-top: 1cm;
+    font-family: 'Stint Ultra Condensed', cursive;
+    font-size: 0.7cm;
+    padding-right: 0.5cm;
+}
+.whatsapp hr{
+    color: grey;
+    width: 90%;
+    margin-left: 2cm;
+}
+
+.whatsappbutton{
+    margin-left: 13cm;
+    margin-top: 1cm;
+    width: 9cm;
+    height: 3cm;
+    background-color: rgb(44, 173, 5);
+    margin-bottom: 1cm;
+}
+.whatsappbutton:hover{  background-color: rgb(31, 126, 2);}
+.whatsappbutton a{
+    text-decoration: none;
+
+}
+.whatsappbutton a p{
+    font-size: 1cm;
+    padding-left: 2cm;
+    padding-top: 0.5cm;
+    color: rgb(255, 255, 255);
+} 
+
